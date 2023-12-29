@@ -16,55 +16,104 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: Strings.appName),
+      home: const MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        backgroundColor: Colors.green,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: //Center(
+        //child:
+        Column(
           children: <Widget>[
-            const Text(
-              Strings.mainScreenMsg,
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
+            Row(
+              children: [
+                //User Profile photo
+                const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('assets/icons/profilePhotoIcon.jpg'), // Replace 'image_name.png' with the actual file name of your image in the assets folder
+                    radius: 20, // You can adjust the radius as needed
+                  ),
+                ),
+
+                //All music feed view
+                SizedBox(
+                  width: 70,
+                  child: Card(
+                    color: Colors.green,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0), // Adjust the value as needed
+                    ),
+                    child: const Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(16),
+                        child: Text(
+                          'All',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    )
+                  ),
+                ),
+
+                //Music feed view
+                Card(
+                  color: Colors.black12,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0), // Adjust the value as needed
+                    side: const BorderSide(
+                      color: Colors.white, // Set the color of the border
+                      width: 2.0, // Set the width of the border
+                    ),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      'Music',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+
+                //Podcast feed view
+                Card(
+                  color: Colors.black12,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0), // Adjust the value as needed
+                    side: const BorderSide(
+                      color: Colors.white, // Set the color of the border
+                      width: 2.0, // Set the width of the border
+                    ),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(16),
+                    child: Text(
+                      'Podcast',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: Strings.mainScreenFabButtonTooltip,
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      //),// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
