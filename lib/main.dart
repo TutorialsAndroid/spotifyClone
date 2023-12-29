@@ -41,13 +41,13 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/icons/spotify.png', // Replace with your image asset
+                Strings.spotifyIcon, // Replace with your image asset
                 height: 30,
                 width: 30,// Adjust the height as needed
               ),
               const SizedBox(width: 8), // Add some spacing between image and text
               const Text(
-                'Spotify',
+                Strings.appBarTitle,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Padding(
                   padding: EdgeInsets.all(16),
                   child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/profilePhoto/akshay.jpg'), // Replace 'image_name.png' with the actual file name of your image in the assets folder
+                    backgroundImage: AssetImage(Strings.spotifyAccountProfilePhoto), // Replace 'image_name.png' with the actual file name of your image in the assets folder
                     radius: 20, // You can adjust the radius as needed
                   ),
                 ),
@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Padding(
                         padding: EdgeInsets.all(16),
                         child: Text(
-                          'All',
+                          Strings.headerNavigationText1,
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const Padding(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      'Music',
+                      Strings.headerNavigationText2,
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const Padding(
                     padding: EdgeInsets.all(16),
                     child: Text(
-                      'Podcast',
+                      Strings.headerNavigationText3,
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -190,19 +190,19 @@ class _MyHomePageState extends State<MyHomePage> {
           //Home button
           const BottomNavigationBarItem(
             icon: Icon(Icons.home_filled),
-            label: 'Home',
+            label: Strings.bottomNavigationText1,
           ),
 
           //Search button
           const BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Search',
+            label: Strings.bottomNavigationText2,
           ),
 
           //Your library button
           const BottomNavigationBarItem(
             icon: Icon(Icons.my_library_music),
-            label: 'Your Library',
+            label: Strings.bottomNavigationText3,
           ),
 
           //Purchase premium button
@@ -216,13 +216,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   BlendMode.srcIn,
                 ),
                 child: Image.asset(
-                  'assets/icons/spotify.png', // Replace with the path to your image asset
+                  Strings.spotifyIcon, // Replace with the path to your image asset
                   width: 24.0, // Set the same width as the container
                   height: 24.0, // Set the same height as the container
                 ),
               ),
             ),
-            label: 'Premium',
+            label: Strings.bottomNavigationText4,
           )
         ],
       ),
