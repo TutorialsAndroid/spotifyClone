@@ -63,7 +63,13 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - assets/icons/spotify.png
     - assets/icons/profilePhotoIcon.jpg
+    - assets/images/artist/ariana_album.png
+    - assets/images/artist/avicii_album.png
+    - assets/images/artist/cardib_album.png
+    - assets/images/artist/shawn_album.png
+    - assets/images/profilePhoto/akshay.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
