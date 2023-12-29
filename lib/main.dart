@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:spotifyclone/strings.dart';
 
@@ -134,6 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
 
+            //Show all music feed
             Expanded(
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -182,6 +181,51 @@ class _MyHomePageState extends State<MyHomePage> {
 
           ],
         ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white,
+        backgroundColor: Colors.black26,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          //Home button
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.home_filled),
+            label: 'Home',
+          ),
+
+          //Search button
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+
+          //Your library button
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.my_library_music),
+            label: 'Your Library',
+          ),
+
+          //Purchase premium button
+          BottomNavigationBarItem(
+            icon: SizedBox(
+              width: 24.0, // Set your desired width
+              height: 24.0, // Set your desired height
+              child: ColorFiltered(
+                colorFilter: const ColorFilter.mode(
+                  Colors.white, // Set your desired tint color
+                  BlendMode.srcIn,
+                ),
+                child: Image.asset(
+                  'assets/icons/spotify.png', // Replace with the path to your image asset
+                  width: 24.0, // Set the same width as the container
+                  height: 24.0, // Set the same height as the container
+                ),
+              ),
+            ),
+            label: 'Premium',
+          )
+        ],
+      ),
       //),// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
