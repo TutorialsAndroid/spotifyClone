@@ -69,6 +69,7 @@ flutter:
     - assets/images/artist/avicii_album.png
     - assets/images/artist/cardib_album.png
     - assets/images/artist/shawn_album.png
+    - assets/images/artist/theUnstoppables_album.png
     - assets/images/profilePhoto/akshay.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
