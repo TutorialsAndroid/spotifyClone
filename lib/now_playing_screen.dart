@@ -46,7 +46,6 @@ class _NowPlayingScreenState extends State<NowPlayingScreen> {
             ),
           ),
 
-
           Scaffold(
             backgroundColor: Colors.transparent,
             appBar: AppBar(
@@ -66,11 +65,7 @@ class _NowPlayingScreenState extends State<NowPlayingScreen> {
                         height: 30.0, // Set the same height as the container
                       ),
                     ),
-                    // Image.asset(
-                    //   Strings.spotifyIcon, // Replace with your image asset
-                    //   height: 30,
-                    //   width: 30,// Adjust the height as needed
-                    // ),
+
                     const SizedBox(width: 8), // Add some spacing between image and text
 
                     const Column(
@@ -128,6 +123,7 @@ class _NowPlayingScreenState extends State<NowPlayingScreen> {
                               ),
 
                               SizedBox(
+                                height: 20,
                                 child: Slider(
                                   value: 20.0,
                                   min: 0,
@@ -137,30 +133,58 @@ class _NowPlayingScreenState extends State<NowPlayingScreen> {
                                     });
                                   },
                                 ),
-                              )
+                              ),
+
+                              const Padding(
+                                padding: EdgeInsets.fromLTRB(0, 0, 16, 0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '01:26',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w900
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              const Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  IconButton(
+                                    onPressed: null,
+                                    icon: Icon(
+                                      Icons.skip_previous_sharp,
+                                      color: Colors.black,
+                                    ),
+                                    iconSize: 60.0,
+                                  ),
+                                  IconButton(
+                                    onPressed: null,
+                                    icon: Icon(
+                                      Icons.play_arrow,
+                                      color: Colors.pink,
+                                    ),
+                                    iconSize: 60.0,
+                                  ),
+                                  IconButton(
+                                    onPressed: null,
+                                    icon: Icon(
+                                      Icons.skip_next_sharp,
+                                      color: Colors.black),
+                                    iconSize: 60.0,
+                                  ),
+                                ],
+                              ),
                             ],
                           )
                       ),
                     ),
                   ],
-                )
-              // Card(
-              //   color: Colors.transparent,
-              //   shape: const RoundedRectangleBorder(
-              //     side: BorderSide(
-              //       color: Colors.green, // Set the color of the border
-              //       width: 4.0, // Set the width of the border
-              //     ),
-              //   ),
-              //   child: Column(
-              //     children: [
-              //       Image.asset(
-              //         'assets/images/artist/cardib_album.png',
-              //         fit: BoxFit.cover,
-              //       ),
-              //     ],
-              //   )
-              // ),
+                ),
             ),
           )
         ],
