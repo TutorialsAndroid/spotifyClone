@@ -24,7 +24,6 @@ class _NowPlayingScreenState extends State<NowPlayingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double _currentValue = 0.0;
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -135,20 +134,10 @@ class _NowPlayingScreenState extends State<NowPlayingScreen> {
                                   max: 100,
                                   onChanged: (value) {
                                     setState(() {
-                                      _currentValue = value;
                                     });
                                   },
                                 ),
                               )
-
-                              // Text(
-                              //   'I like it',
-                              //   style: TextStyle(
-                              //       color: Colors.red,
-                              //       fontSize: 30,
-                              //       fontWeight: FontWeight.bold
-                              //   ),
-                              // )
                             ],
                           )
                       ),
